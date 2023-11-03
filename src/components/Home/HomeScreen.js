@@ -55,8 +55,6 @@ const Search = ({ listOfProducts, setListOfProducts }) => {
         setIsSearching(true);
         let toSearch = search.toLowerCase();
         const products = listOfProducts.filter((product) => {
-            // console.log(product.title.toLowerCase());
-            // console.log(product.title.toLowerCase().includes(toSearch));
             return product.title.toLowerCase().includes(toSearch) == true;
         });
         setListOfProducts(products);
@@ -68,9 +66,8 @@ const Search = ({ listOfProducts, setListOfProducts }) => {
         }
     }, [isSearching]);
 
-    useEffect(() => {}, [search]);
+    useEffect(() => {}, [search, listOfProducts]);
 
-    useEffect(() => {}, [listOfProducts]);
     return (
         <View style={{ flexDirection: "row", width: "100%" }}>
             <TextInput
